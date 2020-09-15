@@ -1,14 +1,17 @@
 from line import Line
 import random
 
+
 def random_point(xlower, xupper, ylower, yupper):
     return (random.uniform(xlower, xupper), random.uniform(ylower, yupper))
+
 
 def is_inside_all_lines(lines: [Line], point):
     for line in lines:
         if not line.is_inside(point[0], point[1]):
             return False
     return True
+
 
 #calculate area of shape between all the lines
 def area(lines: [Line], xlower, xupper, ylower, yupper):

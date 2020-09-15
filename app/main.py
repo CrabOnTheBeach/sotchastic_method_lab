@@ -1,8 +1,6 @@
 from parabola import Parabola
 import visualizer
-import math
 import stochastic
-
 
 
 def getdata():
@@ -14,6 +12,7 @@ def getdata():
         parabolas.append(p)
     return parabolas
 
+
 def test(par):
     p = (5, 5)
     p1 = par.transform(p[0], p[1])
@@ -22,12 +21,9 @@ def test(par):
     print(p2)
 
 
-
-
-parabolas = getdata()
-test(parabolas[0])
-visualizer.visualize(parabolas)
-print(stochastic.area(parabolas, -10, 10, -10, 10))
-print(stochastic.integrate(lambda x, y: x**2 * y**2, parabolas, -10, 10, -10, 10))
-
-#save(x, 'x', y, 'y(x)')
+if __name__ == '__main__':
+    parabolas = getdata()
+    test(parabolas[0])
+    visualizer.visualize(parabolas)
+    print(stochastic.area(parabolas, -10, 10, -10, 10))
+    print(stochastic.integrate(lambda x, y: x**2 * y**2, parabolas, -10, 10, -10, 10))

@@ -2,14 +2,17 @@ from parabola import Parabola
 import matplotlib.pyplot as plt
 import stochastic
 
+
 def args_from_range(fr, to, dx):
     return [fr + i * dx for i in range(int(1 + (to - fr) / dx))]
+
 
 def transformed_points(func, args):
     xy = [func(arg) for arg in args]
     x = [elem[0] for elem in xy]
     y = [elem[1] for elem in xy]
     return x, y
+
 
 def visualize(parabolas):
     for p in parabolas:
